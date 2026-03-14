@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TinyHive Bridge</string>
+    <string name="accessibility_description">TinyHive Bridge allows your hive to control apps on this device. It can read screen content, tap buttons, and perform gestures on your behalf.</string>
+    <string name="notification_channel_name">TinyHive Bridge</string>
+    <string name="notification_channel_description">Shows when TinyHive Bridge is connected</string>
+</resources>

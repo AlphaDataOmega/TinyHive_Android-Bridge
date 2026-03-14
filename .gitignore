@@ -1,0 +1,21 @@
+# Built APKs
+*.apk
+*.aab
+
+# Gradle
+.gradle/
+build/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Signing keys (never commit these!)
+*.jks
+*.keystore
+keystore.properties
+
+# Logs
+*.log

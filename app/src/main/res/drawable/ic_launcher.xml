@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#0D1117"
+        android:pathData="M54,54m-54,0a54,54 0,1 1,108 0a54,54 0,1 1,-108 0" />
+
+    <!-- Hexagon (hive) -->
+    <path
+        android:fillColor="#00CC88"
+        android:pathData="M54,24L74,37L74,63L54,76L34,63L34,37Z"
+        android:strokeWidth="2"
+        android:strokeColor="#00CC88" />
+
+    <!-- Inner hexagon -->
+    <path
+        android:fillColor="#0D1117"
+        android:pathData="M54,32L66,41L66,59L54,68L42,59L42,41Z" />
+
+    <!-- Center dot -->
+    <circle
+        android:fillColor="#00CC88"
+        android:centerX="54"
+        android:centerY="50"
+        android:radius="6" />
+
+</vector>

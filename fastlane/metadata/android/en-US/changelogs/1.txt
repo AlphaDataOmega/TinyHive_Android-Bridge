@@ -1,0 +1,9 @@
+Initial release
+
+• Connect to your TinyHive via QR code or deep link
+• Control any app via Accessibility Service
+• Tap, swipe, scroll, and type commands
+• Read screen content
+• Secure WebSocket connection
+• Auto-reconnect on connection loss
+• Background service with low battery impact

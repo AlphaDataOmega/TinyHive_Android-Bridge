@@ -1,0 +1,44 @@
+TinyHive Bridge connects your Android phone to your personal TinyHive AI assistant, enabling hands-free control of your apps.
+
+🔗 SEAMLESS CONNECTION
+• Scan a QR code or tap a link to pair instantly
+• Secure WebSocket connection to YOUR hive only
+• Auto-reconnects when connection drops
+
+🎯 APP CONTROL
+• Open any app by name
+• Tap buttons and UI elements
+• Swipe, scroll, and navigate
+• Type text into any input field
+• Read screen content
+
+🔒 PRIVACY FIRST
+• Connects only to YOUR personal hive
+• No data sent to third parties
+• All commands encrypted in transit
+• You control what actions are allowed
+
+⚡ ALWAYS READY
+• Runs as a background service
+• Starts automatically on boot
+• Low battery impact
+
+REQUIREMENTS
+• Android 8.0 or higher
+• A running TinyHive instance
+• Accessibility Service permission (required for app control)
+
+HOW IT WORKS
+1. Install the app
+2. Enable Accessibility Service in Settings
+3. Scan the QR code from your TinyHive dashboard
+4. Done! Your hive can now control apps on this device
+
+PERFECT FOR
+• Hands-free phone control
+• Automation workflows
+• Accessibility assistance
+• Remote device management
+
+TinyHive Bridge is open source. View the code at:
+github.com/AlphaDataOmega/TinyHive_Android-Bridge

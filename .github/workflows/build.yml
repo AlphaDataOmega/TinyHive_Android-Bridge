@@ -31,6 +31,16 @@ jobs:
       - name: Build Debug APK
         run: gradle assembleDebug
 
+      # Upload debug APK BEFORE the release-signing path so it lands as
+      # an artifact even when the keystore secrets aren't configured.
+      # Debug builds are auto-signed by AGP with the Android debug
+      # keystore — installable for sideloading, not Play-Store eligible.
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tinyhive-bridge-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+
       - name: Build Release APK
         run: gradle assembleRelease
 
@@ -42,6 +52,13 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
+          # Fail loudly if signing secrets aren't configured rather than
+          # let apksigner emit a cryptic "unexpected parameter" error.
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ] || [ -z "$KEY_PASSWORD" ]; then
+            echo "::error::Signing secrets not configured. Set KEYSTORE_BASE64, KEYSTORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD in the repo's GitHub Actions secrets. See PUBLISHING.md for instructions. The debug APK is still uploaded above for sideload installs."
+            exit 1
+          fi
+
           echo "$KEYSTORE_BASE64" | base64 -d > keystore.jks
 
           # Find the unsigned APK
@@ -62,12 +79,6 @@ jobs:
 
           # Clean up keystore
           rm keystore.jks
-
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: tinyhive-bridge-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload Signed Release APK
         if: github.event_name != 'pull_request'
